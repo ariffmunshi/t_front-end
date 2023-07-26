@@ -1,43 +1,18 @@
 import "./SideNav.css";
-import chevronIcon from "../../assets/chevron-icon.svg";
+import ListItem from "./ListItem";
 
-function SideNav({ active, setNavOpen }) {
+function SideNav({ active, setNavOpen, apiList }) {
     return (
         <aside
             className={`side-nav-container ${active ? "active" : ""}`}
             onClick={() => setNavOpen(false)}
         >
-            <nav className="side-nav">
+            <nav className="side-nav" onClick={(e) => e.stopPropagation()}>
                 <h2 className="side-nav_title">Select Provider</h2>
                 <ul className="side-nav_list">
-                    <li className="side-nav_list-item">
-                        <a href="#" className="side-nav_link">
-                            API NAME
-                            <img
-                                src={chevronIcon}
-                                alt="chevron icon"
-                                className="chevron-icon"
-                            />
-                        </a>
-                        <a href="#" className="side-nav_link-details">
-                            <img alt="API logo" className="api-logo" />
-                            API TITLE
-                        </a>
-                    </li>
-                    <li className="side-nav_list-item active">
-                        <a href="#" className="side-nav_link">
-                            API NAME
-                            <img
-                                src={chevronIcon}
-                                alt="chevron icon"
-                                className="chevron-icon"
-                            />
-                        </a>
-                        <a href="#" className="side-nav_link-details">
-                            <img alt="API logo" className="api-logo" />
-                            API TITLE
-                        </a>
-                    </li>
+                    {apiList.map((api, index) => (
+                        <ListItem key={index} api={api} />
+                    ))}
                 </ul>
             </nav>
         </aside>
