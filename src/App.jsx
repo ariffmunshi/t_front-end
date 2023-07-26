@@ -1,11 +1,10 @@
+import HomeScreen from "./screens/home/HomeScreen";
 import "./App.css";
 
 function App() {
     return (
         <div className="container">
-            <main>
-                <button>Explore web APIs</button>
-            </main>
+            <HomeScreen />
         </div>
     );
 }
