@@ -63,13 +63,13 @@
     padding: 0 10px;
     font-size: 20px;
     line-height: 1;
-    transition: max-height ease-out 300ms;
 }
 
 .side-nav_list-item.active > .side-nav_link-details {
     display: flex;
     max-height: 100px;
     padding: 10px;
+    transition: max-height ease-out 300ms;
 }
 
 .side-nav_list-item .api-logo {

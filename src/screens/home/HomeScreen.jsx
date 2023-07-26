@@ -2,7 +2,13 @@ import PrimaryButton from "../../components/buttons/PrimaryButton";
 import SideNav from "../../layouts/nav/SideNav";
 import "./HomeScreen.css";
 
-function HomeScreen({ navOpen, setNavOpen, apiList }) {
+function HomeScreen({
+    navOpen,
+    setNavOpen,
+    apiList,
+    setActiveAPI,
+    apiDetails,
+}) {
     return (
         <>
             <main className="home-screen">
@@ -12,6 +18,8 @@ function HomeScreen({ navOpen, setNavOpen, apiList }) {
                 active={navOpen}
                 setNavOpen={setNavOpen}
                 apiList={apiList}
+                setActiveAPI={setActiveAPI}
+                apiDetails={apiDetails}
             />
         </>
     );

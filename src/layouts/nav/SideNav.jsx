@@ -1,7 +1,7 @@
 import "./SideNav.css";
 import ListItem from "./ListItem";
 
-function SideNav({ active, setNavOpen, apiList }) {
+function SideNav({ active, setNavOpen, apiList, setActiveAPI, apiDetails }) {
     return (
         <aside
             className={`side-nav-container ${active ? "active" : ""}`}
@@ -11,7 +11,12 @@ function SideNav({ active, setNavOpen, apiList }) {
                 <h2 className="side-nav_title">Select Provider</h2>
                 <ul className="side-nav_list">
                     {apiList.map((api, index) => (
-                        <ListItem key={index} api={api} />
+                        <ListItem
+                            key={index}
+                            api={api}
+                            setActiveAPI={setActiveAPI}
+                            apiDetails={apiDetails}
+                        />
                     ))}
                 </ul>
             </nav>
