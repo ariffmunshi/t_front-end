@@ -1,10 +1,12 @@
 import HomeScreen from "./screens/home/HomeScreen";
 import "./App.css";
+import { useState } from "react";
 
 function App() {
+    const [navOpen, setNavOpen] = useState(false);
     return (
         <div className="container">
-            <HomeScreen />
+            <HomeScreen navOpen={navOpen} setNavOpen={setNavOpen} />
         </div>
     );
 }

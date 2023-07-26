@@ -1,9 +1,12 @@
 import "./SideNav.css";
 import chevronIcon from "../../assets/chevron-icon.svg";
 
-function SideNav() {
+function SideNav({ active, setNavOpen }) {
     return (
-        <aside className="side-nav-container">
+        <aside
+            className={`side-nav-container ${active ? "active" : ""}`}
+            onClick={() => setNavOpen(false)}
+        >
             <nav className="side-nav">
                 <h2 className="side-nav_title">Select Provider</h2>
                 <ul className="side-nav_list">

@@ -1,7 +1,11 @@
 import "./PrimaryButton.css";
 
-function PrimaryButton() {
-    return <button className="primary-btn">Explore web APIs</button>;
+function PrimaryButton({ setNavOpen }) {
+    return (
+        <button className="primary-btn" onClick={() => setNavOpen(true)}>
+            Explore web APIs
+        </button>
+    );
 }
 
 export default PrimaryButton;

@@ -2,13 +2,13 @@ import PrimaryButton from "../../components/buttons/PrimaryButton";
 import SideNav from "../../layouts/nav/SideNav";
 import "./HomeScreen.css";
 
-function HomeScreen() {
+function HomeScreen({ navOpen, setNavOpen }) {
     return (
         <>
             <main className="home-screen">
-                <PrimaryButton />
+                <PrimaryButton setNavOpen={setNavOpen} />
             </main>
-            <SideNav />
+            <SideNav active={navOpen} setNavOpen={setNavOpen} />
         </>
     );
 }
