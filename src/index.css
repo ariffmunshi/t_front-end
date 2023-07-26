@@ -2,6 +2,7 @@
 :root {
   --theme-bg-color: #42607B;
   --theme-font-color: #ffffff;
+  --theme-btn-color: #00A1D4;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.25;
