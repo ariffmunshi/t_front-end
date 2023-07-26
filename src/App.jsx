@@ -1,8 +1,12 @@
+import "./App.css";
+
 function App() {
     return (
-        <>
-            <h1>Hello world</h1>
-        </>
+        <div className="container">
+            <main>
+                <button>Explore web APIs</button>
+            </main>
+        </div>
     );
 }
 
