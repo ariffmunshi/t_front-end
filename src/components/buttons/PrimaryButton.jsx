@@ -1,8 +1,12 @@
 import "./PrimaryButton.css";
 
-function PrimaryButton({ setNavOpen }) {
+function PrimaryButton({ setNavOpen, setIsSelected }) {
+    const handleClick = () => {
+        setIsSelected(false);
+        setNavOpen(true);
+    };
     return (
-        <button className="primary-btn" onClick={() => setNavOpen(true)}>
+        <button className="primary-btn" onClick={handleClick}>
             Explore web APIs
         </button>
     );

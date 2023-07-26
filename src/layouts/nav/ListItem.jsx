@@ -1,6 +1,6 @@
 import chevronIcon from "../../assets/chevron-icon.svg";
 
-function ListItem({ api, setActiveAPI, apiDetails }) {
+function ListItem({ api, setActiveAPI, apiDetails, setIsSelected }) {
     const active = api === apiDetails["x-providerName"];
     const handleClick = (target) => {
         const parentNode = target.parentNode;
@@ -27,7 +27,11 @@ function ListItem({ api, setActiveAPI, apiDetails }) {
                     className="chevron-icon"
                 />
             </a>
-            <a href="#" className="side-nav_link-details">
+            <a
+                href="#"
+                className="side-nav_link-details"
+                onClick={() => setIsSelected(true)}
+            >
                 <img src={apiDetails["x-logo"]?.url} className="api-logo" />
                 {apiDetails.title}
             </a>

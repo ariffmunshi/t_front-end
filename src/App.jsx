@@ -1,12 +1,14 @@
 import HomeScreen from "./screens/home/HomeScreen";
 import "./App.css";
 import { useState, useEffect } from "react";
+import DetailsScreen from "./screens/details/DetailsScreen";
 
 function App() {
     const [navOpen, setNavOpen] = useState(false);
     const [apiList, setApiList] = useState([]);
     const [activeAPI, setActiveAPI] = useState("");
     const [apiDetails, setApiDetails] = useState({});
+    const [isSelected, setIsSelected] = useState(false);
 
     useEffect(() => {
         fetch("https://api.apis.guru/v2/providers.json")
@@ -16,7 +18,6 @@ function App() {
     }, []);
 
     useEffect(() => {
-        console.log(activeAPI);
         if (activeAPI) {
             fetch(`https://api.apis.guru/v2/${activeAPI}.json`)
                 .then((response) => response.json())
@@ -25,7 +26,13 @@ function App() {
         }
     }, [activeAPI]);
 
-    return (
+    return isSelected ? (
+        <DetailsScreen
+            apiDetails={apiDetails}
+            setIsSelected={setIsSelected}
+            setNavOpen={setNavOpen}
+        />
+    ) : (
         <div className="container">
             <HomeScreen
                 navOpen={navOpen}
@@ -33,6 +40,7 @@ function App() {
                 apiList={apiList}
                 setActiveAPI={setActiveAPI}
                 apiDetails={apiDetails}
+                setIsSelected={setIsSelected}
             />
         </div>
     );

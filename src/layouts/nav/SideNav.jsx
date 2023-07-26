@@ -1,7 +1,14 @@
 import "./SideNav.css";
 import ListItem from "./ListItem";
 
-function SideNav({ active, setNavOpen, apiList, setActiveAPI, apiDetails }) {
+function SideNav({
+    active,
+    setNavOpen,
+    apiList,
+    setActiveAPI,
+    apiDetails,
+    setIsSelected,
+}) {
     return (
         <aside
             className={`side-nav-container ${active ? "active" : ""}`}
@@ -16,6 +23,7 @@ function SideNav({ active, setNavOpen, apiList, setActiveAPI, apiDetails }) {
                             api={api}
                             setActiveAPI={setActiveAPI}
                             apiDetails={apiDetails}
+                            setIsSelected={setIsSelected}
                         />
                     ))}
                 </ul>

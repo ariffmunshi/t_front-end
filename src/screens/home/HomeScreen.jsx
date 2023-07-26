@@ -8,11 +8,15 @@ function HomeScreen({
     apiList,
     setActiveAPI,
     apiDetails,
+    setIsSelected,
 }) {
     return (
         <>
             <main className="home-screen">
-                <PrimaryButton setNavOpen={setNavOpen} />
+                <PrimaryButton
+                    setNavOpen={setNavOpen}
+                    setIsSelected={setIsSelected}
+                />
             </main>
             <SideNav
                 active={navOpen}
@@ -20,6 +24,7 @@ function HomeScreen({
                 apiList={apiList}
                 setActiveAPI={setActiveAPI}
                 apiDetails={apiDetails}
+                setIsSelected={setIsSelected}
             />
         </>
     );
