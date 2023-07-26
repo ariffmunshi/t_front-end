@@ -23,13 +23,13 @@ function DetailsScreen({ apiDetails, setIsSelected, setNavOpen }) {
                 <div className="details-screen_section">
                     <h2>Contact</h2>
                     <p>
-                        <span>Email</span> {apiDetails.contact.email}
+                        <span>Email</span> {apiDetails.contact?.email}
                     </p>
                     <p>
-                        <span>Name</span> {apiDetails.contact.name}
+                        <span>Name</span> {apiDetails.contact?.name}
                     </p>
                     <p>
-                        <span>Url</span> {apiDetails.contact.url}
+                        <span>Url</span> {apiDetails.contact?.url}
                     </p>
                 </div>
             </div>
