@@ -18,14 +18,16 @@ function HomeScreen({
                     setIsSelected={setIsSelected}
                 />
             </main>
-            <SideNav
-                active={navOpen}
-                setNavOpen={setNavOpen}
-                apiList={apiList}
-                setActiveAPI={setActiveAPI}
-                apiDetails={apiDetails}
-                setIsSelected={setIsSelected}
-            />
+            {navOpen && (
+                <SideNav
+                    active={navOpen}
+                    setNavOpen={setNavOpen}
+                    apiList={apiList}
+                    setActiveAPI={setActiveAPI}
+                    apiDetails={apiDetails}
+                    setIsSelected={setIsSelected}
+                />
+            )}
         </>
     );
 }
