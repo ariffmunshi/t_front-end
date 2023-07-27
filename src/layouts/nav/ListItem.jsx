@@ -1,7 +1,7 @@
 import chevronIcon from "../../assets/chevron-icon.svg";
 
 function ListItem({ api, setActiveAPI, apiDetails, setIsSelected }) {
-    const active = api === apiDetails["x-providerName"];
+    const active = api === apiDetails.info["x-providerName"];
     const handleClick = (target) => {
         const parentNode = target.parentNode;
         if (parentNode.classList.contains("active")) {
@@ -32,8 +32,11 @@ function ListItem({ api, setActiveAPI, apiDetails, setIsSelected }) {
                 className="side-nav_link-details"
                 onClick={() => setIsSelected(true)}
             >
-                <img src={apiDetails["x-logo"]?.url} className="api-logo" />
-                {apiDetails.title}
+                <img
+                    src={apiDetails.info["x-logo"]?.url}
+                    className="api-logo"
+                />
+                {apiDetails.info.title}
             </a>
         </li>
     );

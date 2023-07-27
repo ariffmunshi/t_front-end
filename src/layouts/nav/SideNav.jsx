@@ -9,6 +9,7 @@ function SideNav({
     apiDetails,
     setIsSelected,
 }) {
+    console.log(apiDetails);
     return (
         <aside
             className={`side-nav-container ${active ? "active" : ""}`}

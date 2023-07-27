@@ -7,29 +7,29 @@ function DetailsScreen({ apiDetails, setIsSelected, setNavOpen }) {
             <header className="details-screen_header">
                 <img
                     className="details-screen_api-logo"
-                    src={apiDetails["x-logo"]?.url}
+                    src={apiDetails.info["x-logo"]?.url}
                 />
-                <h1>{apiDetails.title}</h1>
+                <h1>{apiDetails.info.title}</h1>
             </header>
             <div className="details-screen_description">
                 <div className="details-screen_section">
                     <h2>Description</h2>
-                    <p>{apiDetails.description}</p>
+                    <p>{apiDetails.info.description}</p>
                 </div>
                 <div className="details-screen_section">
                     <h2>Swagger</h2>
-                    <p>placeholder</p>
+                    <p>{apiDetails.swaggerUrl}</p>
                 </div>
                 <div className="details-screen_section">
                     <h2>Contact</h2>
                     <p>
-                        <span>Email</span> {apiDetails.contact?.email}
+                        <span>Email</span> {apiDetails.info.contact?.email}
                     </p>
                     <p>
-                        <span>Name</span> {apiDetails.contact?.name}
+                        <span>Name</span> {apiDetails.info.contact?.name}
                     </p>
                     <p>
-                        <span>Url</span> {apiDetails.contact?.url}
+                        <span>Url</span> {apiDetails.info.contact?.url}
                     </p>
                 </div>
             </div>

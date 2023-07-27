@@ -21,7 +21,7 @@ function App() {
         if (activeAPI) {
             fetch(`https://api.apis.guru/v2/${activeAPI}.json`)
                 .then((response) => response.json())
-                .then((json) => setApiDetails(Object.values(json.apis)[0].info))
+                .then((json) => setApiDetails(Object.values(json.apis)[0]))
                 .catch(() => console.log("Error"));
         }
     }, [activeAPI]);
